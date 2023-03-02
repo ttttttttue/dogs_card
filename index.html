@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Dogs</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./api.js"></script>
+    <script defer src="./index.js"></script>
+</head>
+<body >
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+            <div class="container-fluid">
+              <a class="navbar-brand text-white fs-3" href="#">only <img src="./src/img/next.png" style="height: 35px;"> Dogs</a>
+              <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse fs-5" id="navbarNavDropdown">
+                <button type="button" data-action="addCard" class="btn but btnAdd">Add Dog</button>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="container_card">
+      <div data-wr class="container">
+      </div>
+    </div>
+
+    <div data-modal_card class=" modal-wrapper modal_dog hidden" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content ">
+          <div class="modal-header">
+            <input name='name' placeholder="Name" disabled value="" type='text' class="modal-title">
+            <button type="button" class="btn btn-danger close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form name="publish" class="modal-body pub">
+              <div class="infoCardAll">
+                <span>Rate:</span>
+                <input name='rate' disabled value="" type='number' class="infoCard rateDog" min="1" max="10"></input>
+                <hr>
+                <div class="favorite">
+                  <span>Favorite:</span>
+                  <div class="infoCard favoriteDog d-flex justify-content-between align-items-center text-center">
+                    <input class="infoCard favoriteDog1" disabled name="boolean" type="radio" value='true'>Yes<br>
+                    <input class="infoCard favoriteDog2" disabled name="boolean" type="radio" value='false' >No<br>
+                  </div>
+
+                </div>
+                <hr>
+                <span>Age:</span><input type="number" disabled value="" class="infoCard ageDog" min="1" max="20">
+                <hr>
+                <textarea disabled type="text" value="" class="infoCard descriptionDog"></textarea>
+              </div>
+              <div class="modal-footer button_edit">
+                <button data-edit_card type="button" class="btn btn-outline-warning">Edit</button>
+                <button data-save_card type="submit" class="btn btn-outline-success">Save</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div data-modal class="modal-wrapper hidden">
+      <div class="custom-modal">
+        <form name="add_dogs_form">
+          <button type="submit" class="btn btn-danger exit">✕</button>
+          <div class="mb-3">
+            <input name="id" type="number" placeholder="id" class="form-control">
+          </div>
+          <div class="mb-3">
+            <input name="name" type="text" placeholder="name" class="form-control">
+          </div>
+          <div class="mb-3">
+            <input name="image" type="text" placeholder="image" class="form-control">
+          </div>
+          <div class="mb-3">
+            <input name="age" type="number" placeholder="age" class="form-control">
+          </div>
+          <div class="mb-3">
+            <input name="rate" type="number" placeholder="rate" class="form-control">
+          </div>
+          <div class="mb-3 form-check">
+            <input name="favorite" type="checkbox" class="form-check-input" >
+            <label class="form-check-label" for="exampleCheck1">Favorite</label>
+          </div>
+          <div class="mb-3">
+            <textarea name="description" type="text" placeholder="description" class='form-control'></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./localS.js"></script>
+</body>
+</html>
